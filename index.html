@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>BrainFuck Interpreter</title>
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>BrainFuck Interpreter</h1>
+    </div>
+
+    <div class="program">
+      <p>内存空间</p>
+      <ul class="grid mem"></ul>
+
+      <p>代码空间</p>
+      <ul class="grid prog"></ul>
+
+      <p>输入代码</p>
+      <div class="code">
+        <textarea name="code" id="code" cols="30" rows="10" placeholder="Enter you code here...">+++++[>+++++++++++++<-]>.</textarea>
+        <button type="button" id="load">Load</button>
+        <button type="button" id="run">Run</button>
+      </div>
+
+      <div>
+          <label for="fps">FPS：</label>
+          <input type="range" id="fps" min="1" max="60" step="1" value="10">
+          <span id="fps-value">10</span>
+      </div>
+
+      <p>输入</p>
+      <div class="input">
+        <input type="text" name="input" id="input" placeholder="Enter input here...">
+      </div>
+
+      <p>输出</p>
+      <div class="output">
+        <textarea name="output" id="output" cols="30" rows="10" placeholder="Output will appear here..."></textarea>
+      </div>
+    </div>
+
+    <div class="reference">
+      <h3>Reference</h3>
+      <dl>
+        <dt>></dt> <dd>指针向右移动一格</dd>
+        <dt><</dt> <dd>指针向左移动一格</dd>
+        <dt>+</dt> <dd>使指针当前格数值加一</dd>
+        <dt>-</dt> <dd>使指针当前格数值减一</dd>
+        <dt>[</dt> <dd>当指针当前指向值为 0 时，程序跳转到与之对应的 ] 之后；<br>否则程序正常向下执行</dd>
+        <dt>]</dt> <dd>程序跳转回与之对应的 [ 处</dd>
+        <dt>.</dt> <dd>把当前指针指向格中的值按 ASCII 表输出到终端</dd>
+        <dt>,</dt> <dd>从终端读取 1 byte 的数据，存储其 ASCII 值到当前格</dd>
+      </dl>
+    </div>
+
+    <div class="example">
+      <h3>Examples</h3>
+      <ul id="examples">
+        <li><a href="#" data-program="++++++++[>++++[>++>+++>+<<<-]>+>+[<]<-]>>.>---.+++++++..+++.>.>+[,.]<+." data-input="Brendan">say hello</a></li>
+        <li><a href="#" data-program="+[->,]+[+.<]" data-input=">- yaw sihT">reverse a string</a></li>
+        <li><a href="#" data-program="++++[>++++++++<-]>[>,]<[[-<]>[>]<]>>[.>]" data-input="lower">convert to uppercase (letters only)</a></li>
+        <li><a href="#" data-program="++++[>++++++++<-]>[>,]<[[+<]>--[>]<]>>[.>]" data-input="UPPER">convert to lowercase (letters only)</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+</html>

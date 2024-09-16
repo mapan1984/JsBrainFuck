@@ -1,0 +1,61 @@
+/* layout */
+.container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 7fr 3fr;
+}
+
+.container > .header {
+  grid-column: 1/11;
+  grid-row: 1/2;
+}
+.container > .program {
+  grid-column: 1/8;
+  grid-row: 2/5;
+}
+.container > .reference {
+  grid-column: 8/11;
+  grid-row: 2/4;
+}
+.container > .example {
+  grid-column: 8/11;
+  grid-row: 4/5;
+}
+
+/* style */
+.container > div {
+  padding: 1em;
+  background: #eee;
+}
+.container > div:nth-child(odd) {
+  background: #ddd;
+}
+
+textarea {
+  width: 100%;
+  font-family: "Helvetica", "Arial", sans-serif;
+}
+
+ul.grid {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+ul.grid li {
+  list-style-type: none;
+  border: 1px solid #aeaeae;
+  width: 23px;
+  height: 23px;
+  text-align: center;
+}
+ul.grid li.current {
+  background-color: green;
+}
+
+dt {
+  width: auto !important;
+}
+dd {
+  margin-left: 20px !important;
+}
